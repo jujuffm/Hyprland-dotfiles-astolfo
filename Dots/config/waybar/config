@@ -1,0 +1,61 @@
+{
+  "layer": "top",
+    "modules-left": ["custom/arch", "hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["pulseaudio", "cpu", "network", "battery"],
+    "custom/arch": {
+      "format": "  ",
+      "tooltip": false,
+      "on-click": "sh $HOME/.config/rofi/bin/powermenu"
+    },
+    "hyprland/workspaces": {
+      "format": "{name}",
+      "format": "{icon}",
+      "tooltip": false,
+      "all-outputs": true,
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "🗁",
+        "active": "",
+        "default": ""
+      }
+    },
+    "clock": {
+      "format": "<span> </span>{:%H:%M}",
+    },
+    "backlight": {
+      "device": "intel_backlight",
+      "format": "<span color='#b4befe'>{icon}</span> {percent}%",
+      "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "pulseaudio": {
+      "format": "<span>{icon}</span> {volume}%",
+      "format-muted": "",
+      "tooltip": false,
+      "format-icons": {
+        "headphone": "",
+        "default": ["", "", "󰕾", "󰕾", "󰕾", "", "", ""]
+      },
+      "scroll-step": 1,
+    },
+    "network": {
+      "interface": "wlan0",
+      "format": "{ifname}",
+      "format-wifi": "<span>   </span>{essid}",
+      "format-ethernet": "{ipaddr}/{cidr} ",
+      "format-disconnected": "<span>󰖪 </span>No Network",
+      "tooltip": false
+    },
+	
+   "cpu": {
+        "format": "  {usage}% ",
+        "tooltip": false
+    },
+    "battery": {
+      "format": "<span>{icon}</span> {capacity}%",
+      "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+      "format-charging": "<span></span> {capacity}%",
+      "tooltip": false,
+    },
+}
